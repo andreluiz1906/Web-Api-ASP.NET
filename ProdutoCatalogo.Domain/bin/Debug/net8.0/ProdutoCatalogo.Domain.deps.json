@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ProdutoCatalogo.Domain/1.0.0": {
+        "dependencies": {
+          "ProdutoCatalogo.Shared": "1.0.0"
+        },
+        "runtime": {
+          "ProdutoCatalogo.Domain.dll": {}
+        }
+      },
+      "ProdutoCatalogo.Shared/1.0.0": {
+        "runtime": {
+          "ProdutoCatalogo.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ProdutoCatalogo.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ProdutoCatalogo.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

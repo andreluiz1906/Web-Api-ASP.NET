@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "HXenoVAJTIsFL2MtmafqYocbn1IRK86X8nn9ghbGBcQflZCQJXjYFU9kEKwjdR4ZjZFAOoTJtyUjUj9b98wG1w==",
+  "success": true,
+  "projectFilePath": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Service\\ProdutoCatalogo.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Andre\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.5.1\\microsoft.identitymodel.abstractions.7.5.1.nupkg.sha512",
+    "C:\\Users\\Andre\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.5.1\\microsoft.identitymodel.jsonwebtokens.7.5.1.nupkg.sha512",
+    "C:\\Users\\Andre\\.nuget\\packages\\microsoft.identitymodel.logging\\7.5.1\\microsoft.identitymodel.logging.7.5.1.nupkg.sha512",
+    "C:\\Users\\Andre\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.5.1\\microsoft.identitymodel.tokens.7.5.1.nupkg.sha512",
+    "C:\\Users\\Andre\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.5.1\\system.identitymodel.tokens.jwt.7.5.1.nupkg.sha512"
+  ],
+  "logs": []
+}

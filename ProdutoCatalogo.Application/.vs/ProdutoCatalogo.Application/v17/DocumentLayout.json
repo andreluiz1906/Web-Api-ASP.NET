@@ -1,0 +1,337 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Application\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9CAFE4-770C-47BC-833E-6D60AEB0FF71}|..\\ProdutoCatalogo.Infra\\ProdutoCatalogo.Infra.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.infra\\repositories\\permissionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9CAFE4-770C-47BC-833E-6D60AEB0FF71}|..\\ProdutoCatalogo.Infra\\ProdutoCatalogo.Infra.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.infra\\queries\\mysql\\permissionqueries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D42BA992-5629-4C83-85A6-DF7E6D2DB803}|ProdutoCatalogo.Application.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.application\\controllers\\permissoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D42BA992-5629-4C83-85A6-DF7E6D2DB803}|ProdutoCatalogo.Application.csproj|solutionrelative:controllers\\permissoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D42BA992-5629-4C83-85A6-DF7E6D2DB803}|ProdutoCatalogo.Application.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D42BA992-5629-4C83-85A6-DF7E6D2DB803}|ProdutoCatalogo.Application.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D42BA992-5629-4C83-85A6-DF7E6D2DB803}|ProdutoCatalogo.Application.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.application\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D42BA992-5629-4C83-85A6-DF7E6D2DB803}|ProdutoCatalogo.Application.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9CAFE4-770C-47BC-833E-6D60AEB0FF71}|..\\ProdutoCatalogo.Infra\\ProdutoCatalogo.Infra.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.infra\\repositories\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73D06170-E791-4442-81DD-D4A704052486}|..\\ProdutoCatalogo.Domain\\ProdutoCatalogo.Domain.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.domain\\interfaces\\repositories\\iauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73D06170-E791-4442-81DD-D4A704052486}|..\\ProdutoCatalogo.Domain\\ProdutoCatalogo.Domain.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.domain\\interfaces\\services\\ijwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F57DF84F-639A-4704-8B6C-5DB3A962FB24}|..\\ProdutoCatalogo.Service\\ProdutoCatalogo.Service.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.service\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73D06170-E791-4442-81DD-D4A704052486}|..\\ProdutoCatalogo.Domain\\ProdutoCatalogo.Domain.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.domain\\interfaces\\repositories\\ipermission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73D06170-E791-4442-81DD-D4A704052486}|..\\ProdutoCatalogo.Domain\\ProdutoCatalogo.Domain.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.domain\\dtos\\responses\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D42BA992-5629-4C83-85A6-DF7E6D2DB803}|ProdutoCatalogo.Application.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.application\\configurations\\services\\tokenaccessvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D42BA992-5629-4C83-85A6-DF7E6D2DB803}|ProdutoCatalogo.Application.csproj|solutionrelative:configurations\\services\\tokenaccessvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F57DF84F-639A-4704-8B6C-5DB3A962FB24}|..\\ProdutoCatalogo.Service\\ProdutoCatalogo.Service.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.service\\services\\jwtvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73D06170-E791-4442-81DD-D4A704052486}|..\\ProdutoCatalogo.Domain\\ProdutoCatalogo.Domain.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.domain\\interfaces\\services\\ijwtvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9CAFE4-770C-47BC-833E-6D60AEB0FF71}|..\\ProdutoCatalogo.Infra\\ProdutoCatalogo.Infra.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.infra\\dataaccess\\connectionmysql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9CAFE4-770C-47BC-833E-6D60AEB0FF71}|..\\ProdutoCatalogo.Infra\\ProdutoCatalogo.Infra.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.infra\\interfaces\\iconnectionmysql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA3C5420-D504-4EBF-A283-87F62613F75A}|..\\ProdutoCatalogo.Shared\\ProdutoCatalogo.Shared.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.shared\\configurations\\paginationvalues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D42BA992-5629-4C83-85A6-DF7E6D2DB803}|ProdutoCatalogo.Application.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.application\\validators\\rangevaluesattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D42BA992-5629-4C83-85A6-DF7E6D2DB803}|ProdutoCatalogo.Application.csproj|solutionrelative:validators\\rangevaluesattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA3C5420-D504-4EBF-A283-87F62613F75A}|..\\ProdutoCatalogo.Shared\\ProdutoCatalogo.Shared.csproj|d:\\software\\web-api-asp.net\\produtocatalogo.shared\\configurations\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PermissionQueries.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Infra\\Queries\\MySQL\\PermissionQueries.cs",
+              "RelativeDocumentMoniker": "..\\ProdutoCatalogo.Infra\\Queries\\MySQL\\PermissionQueries.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Infra\\Queries\\MySQL\\PermissionQueries.cs",
+              "RelativeToolTip": "..\\ProdutoCatalogo.Infra\\Queries\\MySQL\\PermissionQueries.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAnwAcAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T04:20:18.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Application\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Application\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAEkAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T04:16:40.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthRepository.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Infra\\Repositories\\AuthRepository.cs",
+              "RelativeDocumentMoniker": "..\\ProdutoCatalogo.Infra\\Repositories\\AuthRepository.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Infra\\Repositories\\AuthRepository.cs",
+              "RelativeToolTip": "..\\ProdutoCatalogo.Infra\\Repositories\\AuthRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T04:08:16.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IJwtService.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Domain\\Interfaces\\Services\\IJwtService.cs",
+              "RelativeDocumentMoniker": "..\\ProdutoCatalogo.Domain\\Interfaces\\Services\\IJwtService.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Domain\\Interfaces\\Services\\IJwtService.cs",
+              "RelativeToolTip": "..\\ProdutoCatalogo.Domain\\Interfaces\\Services\\IJwtService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T04:03:25.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Application\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Application\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAhwF0AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T04:02:45.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PermissionRepository.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Infra\\Repositories\\PermissionRepository.cs",
+              "RelativeDocumentMoniker": "..\\ProdutoCatalogo.Infra\\Repositories\\PermissionRepository.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Infra\\Repositories\\PermissionRepository.cs",
+              "RelativeToolTip": "..\\ProdutoCatalogo.Infra\\Repositories\\PermissionRepository.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAADgvx8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T03:00:17.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Permission.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Domain\\DTOs\\Responses\\Permission.cs",
+              "RelativeDocumentMoniker": "..\\ProdutoCatalogo.Domain\\DTOs\\Responses\\Permission.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Domain\\DTOs\\Responses\\Permission.cs",
+              "RelativeToolTip": "..\\ProdutoCatalogo.Domain\\DTOs\\Responses\\Permission.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T02:51:40.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IPermission.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Domain\\Interfaces\\Repositories\\IPermission.cs",
+              "RelativeDocumentMoniker": "..\\ProdutoCatalogo.Domain\\Interfaces\\Repositories\\IPermission.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Domain\\Interfaces\\Repositories\\IPermission.cs",
+              "RelativeToolTip": "..\\ProdutoCatalogo.Domain\\Interfaces\\Repositories\\IPermission.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T02:47:27.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IAuth.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Domain\\Interfaces\\Repositories\\IAuth.cs",
+              "RelativeDocumentMoniker": "..\\ProdutoCatalogo.Domain\\Interfaces\\Repositories\\IAuth.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Domain\\Interfaces\\Repositories\\IAuth.cs",
+              "RelativeToolTip": "..\\ProdutoCatalogo.Domain\\Interfaces\\Repositories\\IAuth.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAcAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T20:07:15.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PermissoesController.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Application\\Controllers\\PermissoesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PermissoesController.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Application\\Controllers\\PermissoesController.cs",
+              "RelativeToolTip": "Controllers\\PermissoesController.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAUwFMAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T02:46:19.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "JwtService.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Service\\Services\\JwtService.cs",
+              "RelativeDocumentMoniker": "..\\ProdutoCatalogo.Service\\Services\\JwtService.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Service\\Services\\JwtService.cs",
+              "RelativeToolTip": "..\\ProdutoCatalogo.Service\\Services\\JwtService.cs",
+              "ViewState": "AQIAAGcAAAAAAAAAAADgv4gAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T18:51:51.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TokenAccessValidator.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Application\\Configurations\\Services\\TokenAccessValidator.cs",
+              "RelativeDocumentMoniker": "Configurations\\Services\\TokenAccessValidator.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Application\\Configurations\\Services\\TokenAccessValidator.cs",
+              "RelativeToolTip": "Configurations\\Services\\TokenAccessValidator.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T18:43:19.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "JwtValidator.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Service\\Services\\JwtValidator.cs",
+              "RelativeDocumentMoniker": "..\\ProdutoCatalogo.Service\\Services\\JwtValidator.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Service\\Services\\JwtValidator.cs",
+              "RelativeToolTip": "..\\ProdutoCatalogo.Service\\Services\\JwtValidator.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwE8AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T18:06:39.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IJwtValidator.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Domain\\Interfaces\\Services\\IJwtValidator.cs",
+              "RelativeDocumentMoniker": "..\\ProdutoCatalogo.Domain\\Interfaces\\Services\\IJwtValidator.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Domain\\Interfaces\\Services\\IJwtValidator.cs",
+              "RelativeToolTip": "..\\ProdutoCatalogo.Domain\\Interfaces\\Services\\IJwtValidator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T18:07:56.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ConnectionMySQL.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Infra\\DataAccess\\ConnectionMySQL.cs",
+              "RelativeDocumentMoniker": "..\\ProdutoCatalogo.Infra\\DataAccess\\ConnectionMySQL.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Infra\\DataAccess\\ConnectionMySQL.cs",
+              "RelativeToolTip": "..\\ProdutoCatalogo.Infra\\DataAccess\\ConnectionMySQL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T18:03:52.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IConnectionMySQL.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Infra\\Interfaces\\IConnectionMySQL.cs",
+              "RelativeDocumentMoniker": "..\\ProdutoCatalogo.Infra\\Interfaces\\IConnectionMySQL.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Infra\\Interfaces\\IConnectionMySQL.cs",
+              "RelativeToolTip": "..\\ProdutoCatalogo.Infra\\Interfaces\\IConnectionMySQL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T18:03:17.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "RangeValuesAttribute.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Application\\Validators\\RangeValuesAttribute.cs",
+              "RelativeDocumentMoniker": "Validators\\RangeValuesAttribute.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Application\\Validators\\RangeValuesAttribute.cs",
+              "RelativeToolTip": "Validators\\RangeValuesAttribute.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T17:20:11.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PaginationValues.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Shared\\Configurations\\PaginationValues.cs",
+              "RelativeDocumentMoniker": "..\\ProdutoCatalogo.Shared\\Configurations\\PaginationValues.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Shared\\Configurations\\PaginationValues.cs",
+              "RelativeToolTip": "..\\ProdutoCatalogo.Shared\\Configurations\\PaginationValues.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T16:53:44.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "JwtSettings.cs",
+              "DocumentMoniker": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Shared\\Configurations\\JwtSettings.cs",
+              "RelativeDocumentMoniker": "..\\ProdutoCatalogo.Shared\\Configurations\\JwtSettings.cs",
+              "ToolTip": "D:\\Software\\Web-Api-ASP.NET\\ProdutoCatalogo.Shared\\Configurations\\JwtSettings.cs",
+              "RelativeToolTip": "..\\ProdutoCatalogo.Shared\\Configurations\\JwtSettings.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T16:36:42.534Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

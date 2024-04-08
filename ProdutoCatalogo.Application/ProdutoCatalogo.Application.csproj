@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProdutoCatalogo.Domain\ProdutoCatalogo.Domain.csproj" />
+    <ProjectReference Include="..\ProdutoCatalogo.Infra\ProdutoCatalogo.Infra.csproj" />
+    <ProjectReference Include="..\ProdutoCatalogo.Service\ProdutoCatalogo.Service.csproj" />
+    <ProjectReference Include="..\ProdutoCatalogo.Shared\ProdutoCatalogo.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

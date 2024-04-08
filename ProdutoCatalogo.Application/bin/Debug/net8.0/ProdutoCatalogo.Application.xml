@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProdutoCatalogo.Application</name>
+    </assembly>
+    <members>
+        <member name="M:ProdutoCatalogo.Application.Controllers.AuthController.LoginAsync(System.DateTime,ProdutoCatalogo.Domain.DTOs.Request.AuthenticationLogin)">
+            <summary>
+            Gera o token de acesso aos endpoints.
+            </summary>
+            <remarks>
+            Exemplo de JSON para login:
+            <pre>
+            {
+              "email": "user@example.com",
+              "senha": "string"
+            }
+            </pre>
+            </remarks>
+            <response code="200">OK: Os dados informados são válidos e o token de acesso foi gerado corretamente.
+            <pre>
+            {
+              "usuario": {
+                "permissao": "string",
+                "apelido": "string",
+                "email": "user@example.com",
+                "id": 1,
+                "dataCadastro": "1900-01-01T00:00:00"
+              },
+              "tokenAcesso": {
+                "token": "string",
+                "expiration": "1900-01-01T00:00:00",
+                "issuedAt": "1900-01-01T00:00:00"
+              }
+            }
+            </pre>
+            </response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="404">Not Found: Não foi possível encontrar um usuário com os dados fornecidos.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.AuthController.RefreshTokenAsync(System.DateTime)">
+            <summary>
+            Este endpoint é responsável por atualizar o token de acesso
+            </summary>
+            <response code="200">OK: Foi gerado um novo token de acesso válido.
+            <pre>
+            {
+              "tokenAcesso": {
+                "token": "string",
+                "expiration": "1900-01-01T00:00:00",
+                "issuedAt": "1900-01-01T00:00:00"
+              }
+            }
+            </pre>
+            </response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.PermissoesController.BusinessLogin(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination)">
+            <summary>
+            Gera o token de acesso aos endpoints.
+            </summary>
+            <remarks>
+            Exemplo de JSON para login:
+            <pre>
+            {
+              "email": "user@example.com",
+              "senha": "string"
+            }
+            </pre>
+            </remarks>
+            <response code="200">OK: Os dados informados são válidos e o token de acesso foi gerado corretamente.
+            <pre>
+            {
+              "usuario": {
+                "permissao": "string",
+                "apelido": "string",
+                "email": "user@example.com",
+                "id": 1,
+                "dataCadastro": "1900-01-01T00:00:00"
+              },
+              "tokenAcesso": {
+                "token": "string",
+                "expiration": "1900-01-01T00:00:00",
+                "issuedAt": "1900-01-01T00:00:00"
+              }
+            }
+            </pre>
+            </response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="404">Not Found: Não foi possível encontrar um usuário com os dados fornecidos.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.PermissoesController.GetById(System.DateTime,System.Int32)">
+            <summary>
+            Gera o token de acesso aos endpoints.
+            </summary>
+            <remarks>
+            Exemplo de JSON para login:
+            <pre>
+            {
+              "email": "user@example.com",
+              "senha": "string"
+            }
+            </pre>
+            </remarks>
+            <response code="200">OK: Os dados informados são válidos e o token de acesso foi gerado corretamente.
+            <pre>
+            {
+              "usuario": {
+                "permissao": "string",
+                "apelido": "string",
+                "email": "user@example.com",
+                "id": 1,
+                "dataCadastro": "1900-01-01T00:00:00"
+              },
+              "tokenAcesso": {
+                "token": "string",
+                "expiration": "1900-01-01T00:00:00",
+                "issuedAt": "1900-01-01T00:00:00"
+              }
+            }
+            </pre>
+            </response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="404">Not Found: Não foi possível encontrar um usuário com os dados fornecidos.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.PermissoesController.BusinessLogin(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination,System.String)">
+            <summary>
+            Gera o token de acesso aos endpoints.
+            </summary>
+            <remarks>
+            Exemplo de JSON para login:
+            <pre>
+            {
+              "email": "user@example.com",
+              "senha": "string"
+            }
+            </pre>
+            </remarks>
+            <response code="200">OK: Os dados informados são válidos e o token de acesso foi gerado corretamente.
+            <pre>
+            {
+              "usuario": {
+                "permissao": "string",
+                "apelido": "string",
+                "email": "user@example.com",
+                "id": 1,
+                "dataCadastro": "1900-01-01T00:00:00"
+              },
+              "tokenAcesso": {
+                "token": "string",
+                "expiration": "1900-01-01T00:00:00",
+                "issuedAt": "1900-01-01T00:00:00"
+              }
+            }
+            </pre>
+            </response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="404">Not Found: Não foi possível encontrar um usuário com os dados fornecidos.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.PermissoesController.GetUsers(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination,System.Int32)">
+            <summary>
+            Gera o token de acesso aos endpoints.
+            </summary>
+            <remarks>
+            Exemplo de JSON para login:
+            <pre>
+            {
+              "email": "user@example.com",
+              "senha": "string"
+            }
+            </pre>
+            </remarks>
+            <response code="200">OK: Os dados informados são válidos e o token de acesso foi gerado corretamente.
+            <pre>
+            {
+              "usuario": {
+                "permissao": "string",
+                "apelido": "string",
+                "email": "user@example.com",
+                "id": 1,
+                "dataCadastro": "1900-01-01T00:00:00"
+              },
+              "tokenAcesso": {
+                "token": "string",
+                "expiration": "1900-01-01T00:00:00",
+                "issuedAt": "1900-01-01T00:00:00"
+              }
+            }
+            </pre>
+            </response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="404">Not Found: Não foi possível encontrar um usuário com os dados fornecidos.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+    </members>
+</doc>

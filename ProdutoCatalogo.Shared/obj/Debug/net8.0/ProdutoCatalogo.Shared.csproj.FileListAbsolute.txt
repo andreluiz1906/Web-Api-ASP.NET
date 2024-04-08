@@ -1,0 +1,12 @@
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Shared\bin\Debug\net8.0\ProdutoCatalogo.Shared.deps.json
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Shared\bin\Debug\net8.0\ProdutoCatalogo.Shared.dll
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Shared\bin\Debug\net8.0\ProdutoCatalogo.Shared.pdb
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Shared\obj\Debug\net8.0\ProdutoCatalogo.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Shared\obj\Debug\net8.0\ProdutoCatalogo.Shared.AssemblyInfoInputs.cache
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Shared\obj\Debug\net8.0\ProdutoCatalogo.Shared.AssemblyInfo.cs
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Shared\obj\Debug\net8.0\ProdutoCatalogo.Shared.csproj.CoreCompileInputs.cache
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Shared\obj\Debug\net8.0\ProdutoCatalogo.Shared.sourcelink.json
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Shared\obj\Debug\net8.0\ProdutoCatalogo.Shared.dll
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Shared\obj\Debug\net8.0\refint\ProdutoCatalogo.Shared.dll
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Shared\obj\Debug\net8.0\ProdutoCatalogo.Shared.pdb
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Shared\obj\Debug\net8.0\ref\ProdutoCatalogo.Shared.dll

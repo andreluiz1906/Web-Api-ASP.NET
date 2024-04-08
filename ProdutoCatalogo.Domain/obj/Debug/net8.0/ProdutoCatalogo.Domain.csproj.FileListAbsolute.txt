@@ -1,0 +1,16 @@
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Domain\bin\Debug\net8.0\ProdutoCatalogo.Domain.deps.json
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Domain\bin\Debug\net8.0\ProdutoCatalogo.Domain.dll
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Domain\bin\Debug\net8.0\ProdutoCatalogo.Domain.pdb
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Domain\obj\Debug\net8.0\ProdutoCatalogo.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Domain\obj\Debug\net8.0\ProdutoCatalogo.Domain.AssemblyInfoInputs.cache
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Domain\obj\Debug\net8.0\ProdutoCatalogo.Domain.AssemblyInfo.cs
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Domain\obj\Debug\net8.0\ProdutoCatalogo.Domain.csproj.CoreCompileInputs.cache
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Domain\obj\Debug\net8.0\ProdutoCatalogo.Domain.sourcelink.json
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Domain\obj\Debug\net8.0\ProdutoCatalogo.Domain.dll
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Domain\obj\Debug\net8.0\refint\ProdutoCatalogo.Domain.dll
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Domain\obj\Debug\net8.0\ProdutoCatalogo.Domain.pdb
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Domain\obj\Debug\net8.0\ref\ProdutoCatalogo.Domain.dll
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Domain\bin\Debug\net8.0\ProdutoCatalogo.Shared.dll
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Domain\bin\Debug\net8.0\ProdutoCatalogo.Shared.pdb
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Domain\obj\Debug\net8.0\ProdutoCatalogo.Domain.csproj.AssemblyReference.cache
+D:\Software\Web-Api-ASP.NET\ProdutoCatalogo.Domain\obj\Debug\net8.0\ProdutoC.B197455A.Up2Date
