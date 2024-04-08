@@ -1,4 +1,6 @@
-﻿namespace ProdutoCatalogo.Shared.Messages;
+﻿using System.Data;
+
+namespace ProdutoCatalogo.Shared.Messages;
 
 public static class ValidationMessages
 {
@@ -14,9 +16,9 @@ public static class ValidationMessages
     public static class Token
     {
         private const string itemName = "Token de Acesso";
-        public const string NotGenerate = $"{FailureTo} {itemName}.";
+        public const string NotGenerate = $"{FailureTo}{itemName}.";
         public const string Expired = $"{itemName} expirado.";
-        public const string Invalid = $"{itemName} {DefaultInvalidField}";
+        public const string Invalid = $"{itemName}{DefaultInvalidField}";
     }
 
     public static class Header
@@ -27,6 +29,8 @@ public static class ValidationMessages
             private const string headerName = "Authorization";
             public const string Missing = $"{itemName}{headerName}{DefaultMissingField}.";
             public const string Invalid = $"{itemName}{headerName}{DefaultInvalidField}.";
+            public const string OwnerInvalid = $"{itemName}{headerName} código de autorização inválido";
+            public const string RoleInvalid = $"{itemName}{headerName} nível de acesso inválido";
         }
         public static class UserAgent
         {
@@ -59,6 +63,56 @@ public static class ValidationMessages
         public static class Password
         {
             private const string itemName = "Senha";
+            public const string Missing = $"{itemName}{DefaultMissingField}";
+        }
+    }
+
+    public static class Category
+    {
+        public static class Name
+        {
+            private const string itemName = "Nome";
+            public const string Missing = $"{itemName}{DefaultMissingField}";
+            public const string Size = $"{itemName} deve conter no máximo 50 caracteres";
+        }
+        public static class Id
+        {
+            private const string itemName = "Id";
+            public const string Missing = $"{itemName}{DefaultMissingField}";
+        }
+    }
+    public static class Product
+    {
+        public static class Name
+        {
+            private const string itemName = "Nome";
+            public const string Missing = $"{itemName}{DefaultMissingField}";
+            public const string Size = $"{itemName} deve conter no máximo 50 caracteres";
+        }
+        public static class Description
+        {
+            private const string itemName = "Descricao";
+            public const string Missing = $"{itemName}{DefaultMissingField}";
+            public const string Size = $"{itemName} deve conter no máximo 50 caracteres";
+        }
+        public static class PurchasePrice
+        {
+            private const string itemName = "ValorCompra";
+            public const string Missing = $"{itemName}{DefaultMissingField}";
+        }
+        public static class ValuePrice
+        {
+            private const string itemName = "ValorVenda";
+            public const string Missing = $"{itemName}{DefaultMissingField}";
+        }
+        public static class Category
+        {
+            private const string itemName = "IdCategoria";
+            public const string Missing = $"{itemName}{DefaultMissingField}";
+        }
+        public static class Id
+        {
+            private const string itemName = "Id";
             public const string Missing = $"{itemName}{DefaultMissingField}";
         }
     }

@@ -23,14 +23,14 @@ namespace ProdutoCatalogo.Application.Controllers
             _iAuth = iAuth ?? throw new ArgumentNullException(nameof(iAuth));
         }
 
-        private TokenAccess? ResponseRequest(string nick, string email, string permission)
+        private TokenAccess? ResponseRequest(int id, string nick, string email, string permission)
         {
-            var claimsToken = _jwt.SetClaim(nick, email, permission);
+            var claimsToken = _jwt.SetClaim(id, nick, email, permission);
             return _jwt.Generate(claimsToken);
         }
 
         /// <summary>
-        /// Gera o token de acesso aos endpoints.
+        /// Este endpoint permite gerar o token de acesso aos demais endpoints.
         /// </summary>
         /// <remarks>
         /// Exemplo de JSON para login:
@@ -77,7 +77,7 @@ namespace ProdutoCatalogo.Application.Controllers
                 var user = await _iAuth.Login(model);
                 if (user != null)
                 {
-                    var tokenAccess = ResponseRequest(user.Apelido, user.Email, user.Permissao);
+                    var tokenAccess = ResponseRequest(user.Id, user.Apelido, user.Email, user.Permissao);
                     if (tokenAccess == null)
                     {
                         return StatusCode(500, ValidationMessages.Token.NotGenerate);
@@ -102,7 +102,7 @@ namespace ProdutoCatalogo.Application.Controllers
         }
 
         /// <summary>
-        /// Este endpoint é responsável por atualizar o token de acesso
+        /// Este endpoint é responsável por atualizar o token de acesso.
         /// </summary>
         /// <response code="200">OK: Foi gerado um novo token de acesso válido.
         /// <pre>

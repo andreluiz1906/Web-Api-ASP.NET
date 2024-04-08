@@ -72,6 +72,7 @@ builder.Services.AddScoped<HeaderValidationFilter>();
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddScoped<IAuth, AuthRepository>();
 builder.Services.AddScoped<IPermission, PermissionRepository>();
+builder.Services.AddScoped<ICategory, CategoryRepository>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

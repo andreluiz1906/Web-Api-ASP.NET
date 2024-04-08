@@ -36,15 +36,38 @@ public class JwtService : IJwtService
         return email;
     }
 
-    public TokenGenerator SetClaim(string nick, string email, string permission)
+    public TokenGenerator SetClaim(int id, string nick, string email, string permission)
     {
         return new TokenGenerator
         {
             RoleAccess = permission,
             Requester = nick,
-            IdentificationName = email
+            IdentificationName = email,
+            Owner = id
         };
     }
+    public int GetOwner(string token)
+    {
+        var claims = this.GetClaims(token);
+        if (claims == null || claims.Count < 1)
+            throw new Exception(ValidationMessages.Token.Invalid);
+
+        int.TryParse(GetClaimValue(claims, "Owner"), out int idOwner);
+
+        return idOwner;
+    }
+
+    public bool isAdministrator(string token)
+    {
+        var claims = this.GetClaims(token);
+        if (claims == null || claims.Count < 1)
+            throw new Exception(ValidationMessages.Token.Invalid);
+
+        string permission = GetClaimValue(claims, "role");
+
+        return permission.Equals("Administrador");
+    }
+
     private TokenGenerator? GetTokenGeneratorFromToken(string token)
     {
         var claims = this.GetClaims(token);
@@ -54,15 +77,17 @@ public class JwtService : IJwtService
         string email = GetClaimValue(claims, "unique_name");
         string permission = GetClaimValue(claims, "role");
         string nick = GetClaimValue(claims, "Requester");
+        int.TryParse(GetClaimValue(claims, "Owner"), out int idOwner);
 
-        if(string.IsNullOrEmpty(email) || string.IsNullOrEmpty(permission) || string.IsNullOrEmpty(nick))
+        if(string.IsNullOrEmpty(email) || string.IsNullOrEmpty(permission) || string.IsNullOrEmpty(nick) || idOwner < 1)
             throw new Exception(ValidationMessages.Token.Invalid);
 
         return new TokenGenerator
         {
             IdentificationName = email,
             RoleAccess = permission,
-            Requester = nick
+            Requester = nick,
+            Owner = idOwner
         };
     }
 
@@ -80,7 +105,8 @@ public class JwtService : IJwtService
         {
             new Claim(ClaimTypes.Name, claimsToken.IdentificationName),
             new Claim(ClaimTypes.Role, claimsToken.RoleAccess),
-            new Claim("Requester", claimsToken.Requester)
+            new Claim("Requester", claimsToken.Requester),
+            new Claim("Owner", claimsToken.Owner.ToString())
         };
 
         DateTime dtGenerate = DateTime.UtcNow;

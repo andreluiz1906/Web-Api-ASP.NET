@@ -7,7 +7,6 @@ public static class BaseQueries
 SELECT	* 
 FROM	permissao 
 WHERE	1 = 1 ";
-
 	public const string GetUserPermissionMapping = @"
 SELECT  u.id,
 		u.Data_cadastro AS dataCadastro,
@@ -17,4 +16,10 @@ SELECT  u.id,
 FROM	usuario u 
 INNER JOIN permissao p ON p.Id = u.Id_permissao 
 WHERE 1 = 1 ";
+	public const string GetCategory = @"
+SELECT c.Id,
+	   c.Nome,
+	   c.Id_usuario AS IdUsuario 
+FROM   categoria c 
+WHERE  1 = 1";
 }

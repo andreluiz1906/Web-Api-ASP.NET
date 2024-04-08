@@ -26,39 +26,36 @@ namespace ProdutoCatalogo.Application.Controllers
         }
 
         /// <summary>
-        /// Gera o token de acesso aos endpoints.
+        /// Este endpoint permite realizar a consulta de todas permissões cadastradas. Esta é uma consulta paginada
         /// </summary>
-        /// <remarks>
-        /// Exemplo de JSON para login:
+        /// <response code="200">OK: A consulta retorna a lista com os dados obtidos.
         /// <pre>
         /// {
-        ///   "email": "user@example.com",
-        ///   "senha": "string"
-        /// }
-        /// </pre>
-        /// </remarks>
-        /// <response code="200">OK: Os dados informados são válidos e o token de acesso foi gerado corretamente.
-        /// <pre>
-        /// {
-        ///   "usuario": {
-        ///     "permissao": "string",
-        ///     "apelido": "string",
-        ///     "email": "user@example.com",
-        ///     "id": 1,
-        ///     "dataCadastro": "1900-01-01T00:00:00"
+        ///   "totalizador": {
+        ///     "existeMaisPaginas": true,
+        ///     "paginaAtual": 1,
+        ///     "totalDePaginas": 1,
+        ///     "totalDeItens": 1,
+        ///     "itensDaLista": 1,
+        ///     "limiteDeItens": 50
         ///   },
-        ///   "tokenAcesso": {
-        ///     "token": "string",
-        ///     "expiration": "1900-01-01T00:00:00",
-        ///     "issuedAt": "1900-01-01T00:00:00"
-        ///   }
+        ///   "permissoes": [
+        ///     {
+        ///       "id": 1,
+        ///       "nome": "string"
+        ///     },
+        ///     {
+        ///       "id": 1,
+        ///       "nome": "string"
+        ///     }
+        ///   ]
         /// }
         /// </pre>
         /// </response>
         /// <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
-        /// <response code="404">Not Found: Não foi possível encontrar um usuário com os dados fornecidos.</response>
+        /// <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+        /// <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
         /// <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
-        //[Authorize]
         [HttpGet]
         public async Task<IActionResult> BusinessLogin([FromHeader(Name = "x-request-timestamp")][Required] DateTime headerTimestamp,
                                                        [FromQuery] Pagination pagination)
@@ -105,39 +102,20 @@ namespace ProdutoCatalogo.Application.Controllers
         }
 
         /// <summary>
-        /// Gera o token de acesso aos endpoints.
+        /// Este endpoint permite realizar a consulta de uma permissão específica realizando a busca pelo Id.
         /// </summary>
-        /// <remarks>
-        /// Exemplo de JSON para login:
+        /// <response code="200">OK: A consulta retorna a lista com os dados obtidos.
         /// <pre>
-        /// {
-        ///   "email": "user@example.com",
-        ///   "senha": "string"
-        /// }
-        /// </pre>
-        /// </remarks>
-        /// <response code="200">OK: Os dados informados são válidos e o token de acesso foi gerado corretamente.
-        /// <pre>
-        /// {
-        ///   "usuario": {
-        ///     "permissao": "string",
-        ///     "apelido": "string",
-        ///     "email": "user@example.com",
+        ///   {
         ///     "id": 1,
-        ///     "dataCadastro": "1900-01-01T00:00:00"
-        ///   },
-        ///   "tokenAcesso": {
-        ///     "token": "string",
-        ///     "expiration": "1900-01-01T00:00:00",
-        ///     "issuedAt": "1900-01-01T00:00:00"
+        ///     "nome": "string"
         ///   }
-        /// }
         /// </pre>
         /// </response>
         /// <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
-        /// <response code="404">Not Found: Não foi possível encontrar um usuário com os dados fornecidos.</response>
+        /// <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+        /// <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
         /// <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
-        //[Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById([FromHeader(Name = "x-request-timestamp")][Required] DateTime headerTimestamp,
                                                  int id)
@@ -177,43 +155,40 @@ namespace ProdutoCatalogo.Application.Controllers
         }
 
         /// <summary>
-        /// Gera o token de acesso aos endpoints.
+        /// Este endpoint permite realizar a consulta das permissões cadastradas filtrando a busca pelo nome da permissão. Esta é uma consulta paginada
         /// </summary>
-        /// <remarks>
-        /// Exemplo de JSON para login:
+        /// <response code="200">OK: A consulta retorna a lista com os dados obtidos.
         /// <pre>
         /// {
-        ///   "email": "user@example.com",
-        ///   "senha": "string"
-        /// }
-        /// </pre>
-        /// </remarks>
-        /// <response code="200">OK: Os dados informados são válidos e o token de acesso foi gerado corretamente.
-        /// <pre>
-        /// {
-        ///   "usuario": {
-        ///     "permissao": "string",
-        ///     "apelido": "string",
-        ///     "email": "user@example.com",
-        ///     "id": 1,
-        ///     "dataCadastro": "1900-01-01T00:00:00"
+        ///   "totalizador": {
+        ///     "existeMaisPaginas": true,
+        ///     "paginaAtual": 1,
+        ///     "totalDePaginas": 1,
+        ///     "totalDeItens": 1,
+        ///     "itensDaLista": 1,
+        ///     "limiteDeItens": 50
         ///   },
-        ///   "tokenAcesso": {
-        ///     "token": "string",
-        ///     "expiration": "1900-01-01T00:00:00",
-        ///     "issuedAt": "1900-01-01T00:00:00"
-        ///   }
+        ///   "permissoes": [
+        ///     {
+        ///       "id": 1,
+        ///       "nome": "string"
+        ///     },
+        ///     {
+        ///       "id": 1,
+        ///       "nome": "string"
+        ///     }
+        ///   ]
         /// }
         /// </pre>
         /// </response>
         /// <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
-        /// <response code="404">Not Found: Não foi possível encontrar um usuário com os dados fornecidos.</response>
+        /// <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+        /// <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
         /// <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
-        //[Authorize]
-        [HttpGet("nome/{nomepermissao}")]
+        [HttpGet("nome/{nome}")]
         public async Task<IActionResult> BusinessLogin([FromHeader(Name = "x-request-timestamp")][Required] DateTime headerTimestamp,
                                                        [FromQuery] Pagination pagination,
-                                                       string nomepermissao)
+                                                       string nome)
         {
             if (!ModelState.IsValid)
             {
@@ -233,7 +208,7 @@ namespace ProdutoCatalogo.Application.Controllers
 
             try
             {
-                var (permissoes, totalDeItens) = await _iPermissao.GetByName(nomepermissao, pagination.pagina, pagination.tamanho);
+                var (permissoes, totalDeItens) = await _iPermissao.GetByName(nome, pagination.pagina, pagination.tamanho);
                 if (permissoes == null)
                 {
                     return NotFound(ValidationMessages.EmptyReturn);
@@ -257,39 +232,42 @@ namespace ProdutoCatalogo.Application.Controllers
         }
 
         /// <summary>
-        /// Gera o token de acesso aos endpoints.
+        /// Este endpoint permite realizar a consulta dos usuários que estão vinculados à permissão pesquisada. Esta é uma consulta paginada
         /// </summary>
-        /// <remarks>
-        /// Exemplo de JSON para login:
+        /// <response code="200">OK: A consulta retorna a lista com os dados obtidos.
         /// <pre>
         /// {
-        ///   "email": "user@example.com",
-        ///   "senha": "string"
-        /// }
-        /// </pre>
-        /// </remarks>
-        /// <response code="200">OK: Os dados informados são válidos e o token de acesso foi gerado corretamente.
-        /// <pre>
-        /// {
-        ///   "usuario": {
-        ///     "permissao": "string",
-        ///     "apelido": "string",
-        ///     "email": "user@example.com",
-        ///     "id": 1,
-        ///     "dataCadastro": "1900-01-01T00:00:00"
+        ///   "totalizador": {
+        ///     "existeMaisPaginas": true,
+        ///     "paginaAtual": 1,
+        ///     "totalDePaginas": 1,
+        ///     "totalDeItens": 1,
+        ///     "itensDaLista": 1,
+        ///     "limiteDeItens": 50
         ///   },
-        ///   "tokenAcesso": {
-        ///     "token": "string",
-        ///     "expiration": "1900-01-01T00:00:00",
-        ///     "issuedAt": "1900-01-01T00:00:00"
-        ///   }
+        ///   "usuarios": [
+        ///     {
+        ///       "id": 1,
+        ///       "permissao": "string",
+        ///       "apelido": "string",
+        ///       "email": "user@example.com",
+        ///       "dataCadastro": "1900-01-01T00:00:00"
+        ///     },
+        ///     {
+        ///       "id": 1,
+        ///       "permissao": "LeitorLeitor",
+        ///       "apelido": "string",
+        ///       "email": "user@example.com",
+        ///       "dataCadastro": "1900-01-01T00:00:00"
+        ///     }
+        ///   ]
         /// }
         /// </pre>
         /// </response>
         /// <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
-        /// <response code="404">Not Found: Não foi possível encontrar um usuário com os dados fornecidos.</response>
+        /// <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+        /// <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
         /// <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
-        //[Authorize]
         [HttpGet("{id}/usuarios")]
         public async Task<IActionResult> GetUsers([FromHeader(Name = "x-request-timestamp")][Required] DateTime headerTimestamp,
                                                   [FromQuery] Pagination pagination,

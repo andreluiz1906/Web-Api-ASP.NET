@@ -1,6 +1,4 @@
-﻿using System.Data;
-
-namespace ProdutoCatalogo.Infra.Queries.MySQL;
+﻿namespace ProdutoCatalogo.Infra.Queries.MySQL;
 
 public static class PermissionQueries
 {
@@ -26,8 +24,7 @@ ORDER BY Id
 
         public const string ById = $@"
 {BaseQueries.GetPermission} 
-AND Id = @IdPermission
-{BaseQueries.CurrentPage};";
+AND Id = @IdPermission;";
 
         public const string ByName = $@"
 {BaseQueries.GetPermission} 
