@@ -2,7 +2,8 @@
 
 namespace ProdutoCatalogo.Domain.DTOs.Responses;
 
-public class UserPermissionMapping : UserBase
+public class User : UserBase
 {
+    public int idPermissao { get; set; }
     public string Permissao { get; set; }
 }

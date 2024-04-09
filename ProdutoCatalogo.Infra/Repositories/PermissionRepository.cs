@@ -16,7 +16,6 @@ public class PermissionRepository : Domain.Interfaces.Repositories.IPermission
         _connection = connection;
     }
 
-
     public async Task<Permission> GetById(int id)
     {
         string sql = PermissionQueries.Get.ById;
@@ -69,12 +68,12 @@ public class PermissionRepository : Domain.Interfaces.Repositories.IPermission
         }
     }
 
-    public async Task<(IEnumerable<UserPermissionMapping> users, int totalItems)> GetUserPermissionsByType(int id, int pageNumber, int pageSize)
+    public async Task<(IEnumerable<User> users, int totalItems)> GetUserPermissionsByType(int id, int pageNumber, int pageSize)
     {
         string sql = PermissionQueries.Get.UsersByPermissionId;
         string sqlCount = PermissionQueries.Count.UsersByPermissionId;
 
-        IEnumerable<UserPermissionMapping> results;
+        IEnumerable<User> results;
         using (var conn = await _connection.Create())
         {
             int pagina = (pageNumber - 1) * pageSize;
@@ -83,7 +82,7 @@ public class PermissionRepository : Domain.Interfaces.Repositories.IPermission
 
             using (var multi = await conn.QueryMultipleAsync(sql, new { IdPermission = id, Offset = pagina, Limit = tamanho }))
             {
-                results = (await multi.ReadAsync<UserPermissionMapping>()).ToList();
+                results = (await multi.ReadAsync<User>()).ToList();
             }
 
             return (results, totalItems);

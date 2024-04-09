@@ -25,7 +25,7 @@ public class CategoryRepository : ICategory
             try
             {
                 int idItem = await conn.ExecuteScalarAsync<int>(sql, new { Nome = categoryName, Id = idUser });
-                return await conn.QueryFirstAsync<Category>(sqlItem, new { IdPermission = idItem });
+                return await conn.QueryFirstAsync<Category>(sqlItem, new { Id = idItem });
             }
             catch (MySqlConnector.MySqlException e)
             {
@@ -42,23 +42,65 @@ public class CategoryRepository : ICategory
 
     public async Task<bool> Update(CategoryUpdate category)
     {
-        throw new NotImplementedException();
+        string sql = CategoryQueries.Update.Item;
+        using (var conn = await _connection.Create())
+        {
+            try
+            {
+                var updated = await conn.ExecuteAsync(sql, new { Nome = category.Nome, Id = category.Id });
+
+                return updated > 0;
+            }
+            catch (MySqlConnector.MySqlException e)
+            {
+                string error = e.Message;
+                if (error.Contains("categoria.nome_UNIQUE"))
+                {
+                    error = $"Já existe uma categoria cadastrada com o nome '{category.Nome}' atrelado à outro ID";
+                }
+
+                throw new Exception(error);
+            }
+        }
     }
 
     public async Task<bool> Delete(int id)
     {
-        throw new NotImplementedException();
+        string sql = CategoryQueries.Delete.Item;
+        using (var conn = await _connection.Create())
+        {
+            try
+            {
+                var deleted = await conn.ExecuteAsync(sql, new { Id = id });
+
+                return deleted > 0;
+            }
+            catch (MySqlConnector.MySqlException e)
+            {
+                string error = e.Message;
+                if (error.Contains("foreign key constraint fails"))
+                {
+                    error = $"Esta categoria não pode ser excluída pois está vinculada a um ou mais produto(s).";
+                }
+
+                throw new Exception(error);
+            }
+        }
     }
 
     public async Task<Category> GetById(int id)
     {
-        throw new NotImplementedException();
+        string sql = CategoryQueries.Get.ById;
+        using (var conn = await _connection.Create())
+        {
+            return await conn.QueryFirstAsync<Category>(sql, new { Id = id });
+        }
     }
 
     public async Task<(IEnumerable<Category> categories, int totalItems)> GetAll(int pageNumber, int pageSize)
     {
-        string sql = PermissionQueries.Get.All;
-        string sqlCount = PermissionQueries.Count.All;
+        string sql = CategoryQueries.Get.All;
+        string sqlCount = CategoryQueries.Count.All;
 
         IEnumerable<Category> results;
         using (var conn = await _connection.Create())
@@ -78,6 +120,22 @@ public class CategoryRepository : ICategory
 
     public async Task<(IEnumerable<Product> products, int totalItems)> GetProductsByCategory(int id, int pageNumber, int pageSize)
     {
-        throw new NotImplementedException();
+        string sql = CategoryQueries.Get.ProductsByCategoryId;
+        string sqlCount = CategoryQueries.Count.ProductsByCategoryId;
+
+        IEnumerable<Product> results;
+        using (var conn = await _connection.Create())
+        {
+            int pagina = (pageNumber - 1) * pageSize;
+            int tamanho = pageSize;
+            int totalItems = await conn.ExecuteScalarAsync<int>(sqlCount, new { IdCategory = id });
+
+            using (var multi = await conn.QueryMultipleAsync(sql, new { IdCategory = id, Offset = pagina, Limit = tamanho }))
+            {
+                results = (await multi.ReadAsync<Product>()).ToList();
+            }
+
+            return (results, totalItems);
+        }
     }
 }

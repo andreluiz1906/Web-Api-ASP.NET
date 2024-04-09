@@ -73,6 +73,8 @@ builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddScoped<IAuth, AuthRepository>();
 builder.Services.AddScoped<IPermission, PermissionRepository>();
 builder.Services.AddScoped<ICategory, CategoryRepository>();
+builder.Services.AddScoped<IUser, UserRepository>();
+builder.Services.AddScoped<IProduct, ProductRepository>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -103,7 +105,7 @@ builder.Services.AddSwaggerGen(options =>
         Name = "Authorization",
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.Http,
-        Description = "Acesso protegido utilizando o accessToken obtido em \"login/autenticacao\""
+        Description = "Acesso protegido utilizando o accessToken obtido em \"api/auth\""
     });
 
     options.AddSecurityRequirement(new OpenApiSecurityRequirement

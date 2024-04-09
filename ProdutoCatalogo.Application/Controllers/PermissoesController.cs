@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using ProdutoCatalogo.Domain.Interfaces.Services;
 using ProdutoCatalogo.Infra.Configurations.Headers;
 using ProdutoCatalogo.Domain.Interfaces.Repositories;
-using ProdutoCatalogo.Domain.DTOs.Request;
 using ProdutoCatalogo.Shared.Messages;
 using System.ComponentModel.DataAnnotations;
 using ProdutoCatalogo.Application.DTOs;
@@ -57,8 +56,8 @@ namespace ProdutoCatalogo.Application.Controllers
         /// <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
         /// <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
         [HttpGet]
-        public async Task<IActionResult> BusinessLogin([FromHeader(Name = "x-request-timestamp")][Required] DateTime headerTimestamp,
-                                                       [FromQuery] Pagination pagination)
+        public async Task<IActionResult> GetAll([FromHeader(Name = "x-request-timestamp")][Required] DateTime headerTimestamp,
+                                                [FromQuery] Pagination pagination)
         {
             if (!ModelState.IsValid)
             {
@@ -104,7 +103,7 @@ namespace ProdutoCatalogo.Application.Controllers
         /// <summary>
         /// Este endpoint permite realizar a consulta de uma permissão específica realizando a busca pelo Id.
         /// </summary>
-        /// <response code="200">OK: A consulta retorna a lista com os dados obtidos.
+        /// <response code="200">OK: A consulta retorna com os detalhes do item.
         /// <pre>
         ///   {
         ///     "id": 1,
@@ -186,9 +185,9 @@ namespace ProdutoCatalogo.Application.Controllers
         /// <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
         /// <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
         [HttpGet("nome/{nome}")]
-        public async Task<IActionResult> BusinessLogin([FromHeader(Name = "x-request-timestamp")][Required] DateTime headerTimestamp,
-                                                       [FromQuery] Pagination pagination,
-                                                       string nome)
+        public async Task<IActionResult> GetByName([FromHeader(Name = "x-request-timestamp")][Required] DateTime headerTimestamp,
+                                                   [FromQuery] Pagination pagination,
+                                                   string nome)
         {
             if (!ModelState.IsValid)
             {
@@ -231,7 +230,7 @@ namespace ProdutoCatalogo.Application.Controllers
             }
         }
 
-        /// <summary>
+        /// <summary>        
         /// Este endpoint permite realizar a consulta dos usuários que estão vinculados à permissão pesquisada. Esta é uma consulta paginada
         /// </summary>
         /// <response code="200">OK: A consulta retorna a lista com os dados obtidos.
@@ -248,16 +247,18 @@ namespace ProdutoCatalogo.Application.Controllers
         ///   "usuarios": [
         ///     {
         ///       "id": 1,
-        ///       "permissao": "string",
         ///       "apelido": "string",
         ///       "email": "user@example.com",
+        ///       "idPermissao": 1,
+        ///       "permissao": "string",
         ///       "dataCadastro": "1900-01-01T00:00:00"
         ///     },
         ///     {
         ///       "id": 1,
-        ///       "permissao": "LeitorLeitor",
         ///       "apelido": "string",
         ///       "email": "user@example.com",
+        ///       "idPermissao": 1,
+        ///       "permissao": "string",
         ///       "dataCadastro": "1900-01-01T00:00:00"
         ///     }
         ///   ]

@@ -62,3 +62,12 @@ ProdutoCatalogo.Service/obj/Debug/net8.0/refint/ProdutoCatalogo.Service.dll
 ProdutoCatalogo.Shared/bin/Debug/net8.0/ProdutoCatalogo.Shared.pdb
 ProdutoCatalogo.Shared/obj/Debug/net8.0/ProdutoCatalogo.Shared.dll
 ProdutoCatalogo.Shared/obj/Debug/net8.0/refint/ProdutoCatalogo.Shared.dll
+ProdutoCatalogo.Application/.vs/ProdutoCatalogo.Application/DesignTimeBuild/.dtbcache.v2
+ProdutoCatalogo.Application/.vs/ProdutoCatalogo.Application/v17/.suo
+ProdutoCatalogo.Application/.vs/ProdutoCatalogo.Application/v17/DocumentLayout.json
+ProdutoCatalogo.Application/bin/Debug/net8.0/ProdutoCatalogo.Application.dll
+ProdutoCatalogo.Application/bin/Debug/net8.0/ProdutoCatalogo.Application.exe
+ProdutoCatalogo.Application/bin/Debug/net8.0/ProdutoCatalogo.Application.xml
+ProdutoCatalogo.Application/bin/Debug/net8.0/ProdutoCatalogo.Domain.pdb
+ProdutoCatalogo.Application/bin/Debug/net8.0/ProdutoCatalogo.Infra.dll
+ProdutoCatalogo.Application/bin/Debug/net8.0/ProdutoCatalogo.Infra.pdb

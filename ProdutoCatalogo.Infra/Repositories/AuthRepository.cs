@@ -15,13 +15,13 @@ public class AuthRepository : IAuth
         _connection = connection;
     }
 
-    public async Task<UserPermissionMapping> Login(AuthenticationLogin data)
+    public async Task<User> Login(AuthenticationLogin data)
     {
         string sql = AuthQueries.GetUser;
 
         using (var conn = await _connection.Create())
         {
-            return await conn.QueryFirstOrDefaultAsync<UserPermissionMapping>(sql, data);
+            return await conn.QueryFirstOrDefaultAsync<User>(sql, data);
         }
     }
 }

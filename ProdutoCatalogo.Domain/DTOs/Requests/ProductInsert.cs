@@ -7,11 +7,10 @@ namespace ProdutoCatalogo.Domain.DTOs.Requests;
 public class ProductInsert : ProductBase
 {
     [Required(ErrorMessage = ValidationMessages.Product.Name.Missing)]
-    [StringLength(80, ErrorMessage = ValidationMessages.Product.Name.Size)]
+    [StringLength(100, ErrorMessage = ValidationMessages.Product.Name.Size)]
     public override string Nome { get ; set ; }
 
-    [Required(ErrorMessage = ValidationMessages.Product.Description.Missing)]
-    [StringLength(80, ErrorMessage = ValidationMessages.Product.Description.Size)]
+    [StringLength(250, ErrorMessage = ValidationMessages.Product.Description.Size)]
     public override string Descricao { get ; set ; }
 
     [Required(ErrorMessage = ValidationMessages.Product.ValuePrice.Missing)]

@@ -45,10 +45,11 @@ namespace ProdutoCatalogo.Application.Controllers
         /// <pre>
         /// {
         ///   "usuario": {
-        ///     "permissao": "string",
+        ///     "id": 1,
         ///     "apelido": "string",
         ///     "email": "user@example.com",
-        ///     "id": 1,
+        ///     "idPermissao": 1,
+        ///     "permissao": "string",
         ///     "dataCadastro": "1900-01-01T00:00:00"
         ///   },
         ///   "tokenAcesso": {

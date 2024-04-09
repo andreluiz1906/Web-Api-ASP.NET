@@ -2,22 +2,31 @@
 
 public static class CategoryQueries
 {
-    private const string BaseCountPrefixPermissions = $"SELECT COUNT(p.Id) FROM permissao p ";
-    private const string BaseCountPrefixUsers = $"SELECT COUNT(u.Id) FROM usuario u WHERE u.Id_permissao = @IdPermission";
-    private const string BaseCountSuffixCount = $" WHERE LOWER(p.Nome) COLLATE utf8mb4_general_ci LIKE LOWER('%#Search#%') ";
-
+    private const string BaseCountPrefixPermissions = $"SELECT COUNT(c.Id) FROM categoria c ";
+    private const string BaseCountPrefixProducts = $"SELECT COUNT(p.Id) FROM produto p WHERE p.Id_categoria = @IdCategory";
+    
     public static class Count
     {
         public const string All = BaseCountPrefixPermissions;
 
-        public const string ByName = $"{BaseCountPrefixPermissions}{BaseCountSuffixCount}";
-
-        public const string UsersByPermissionId = BaseCountPrefixUsers;
+        public const string ProductsByCategoryId = BaseCountPrefixProducts;
     }
+
     public static class Insert
     {
-        public const string Item = $"INSERT INTO categoria(Nome, Id_usuario) VALUES (@Nome, @Id); SELECT LAST_INSERT_ID();";
+        public const string Item = "INSERT INTO categoria(Nome, Id_usuario) VALUES (@Nome, @Id); SELECT LAST_INSERT_ID();";
     }
+
+    public static class Update
+    {
+        public const string Item = "UPDATE categoria SET Nome = @Nome WHERE Id = @Id;";
+    }
+
+    public static class Delete
+    {
+        public const string Item = "DELETE FROM categoria WHERE Id = @Id;";
+    }
+
     public static class Get
     {
         public const string All = @$"
@@ -27,11 +36,11 @@ ORDER BY Id
 
         public const string ById = $@"
 {BaseQueries.GetCategory} 
-AND Id = @IdPermission;";
+AND Id = @Id;";
 
-        public const string UsersByPermissionId = @$"
-{BaseQueries.GetUserPermissionMapping}
-AND p.Id = @IdPermission
+        public const string ProductsByCategoryId = @$"
+{BaseQueries.GetProduct}
+AND p.Id_categoria = @IdCategory
 {BaseQueries.CurrentPage};";
     }
 }

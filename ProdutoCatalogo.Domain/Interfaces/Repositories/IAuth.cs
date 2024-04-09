@@ -5,5 +5,5 @@ namespace ProdutoCatalogo.Domain.Interfaces.Repositories;
 
 public interface IAuth
 {
-    Task<UserPermissionMapping> Login(AuthenticationLogin data);
+    Task<User> Login(AuthenticationLogin data);
 }

@@ -1,0 +1,1076 @@
+{
+	"info": {
+		"_postman_id": "ddaf4d24-94fc-49df-bd3f-5c80e8367593",
+		"name": "Catálogo de Produtos - API",
+		"description": "# 🚀 Sobre\n\nEste template irá orientar sobre o consumo da Web API ASP.NET",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9699727"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Gerar Token JWT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"{{email_usuario}}\",\r\n  \"senha\": \"{{senha_usuario}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}auth",
+							"host": [
+								"{{base_url}}auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Renovar Token JWT",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2Mjk0NjEsImV4cCI6MTcxMjYzMzA2MSwiaWF0IjoxNzEyNjI5NDYxLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.XhA18GMCugV4wgJnn1pdsLDvjatA0WgeIhOKlu1BhC4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}auth/renovar-token",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"renovar-token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Exemplo de requisições para realizar o login na Web API"
+		},
+		{
+			"name": "Permissões",
+			"item": [
+				{
+					"name": "Consultar Permissão por Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2Mjk0NjEsImV4cCI6MTcxMjYzMzA2MSwiaWF0IjoxNzEyNjI5NDYxLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.XhA18GMCugV4wgJnn1pdsLDvjatA0WgeIhOKlu1BhC4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}permissoes/2",
+							"host": [
+								"{{base_url}}permissoes"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Permissões",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2Mjk0NjEsImV4cCI6MTcxMjYzMzA2MSwiaWF0IjoxNzEyNjI5NDYxLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.XhA18GMCugV4wgJnn1pdsLDvjatA0WgeIhOKlu1BhC4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}permissoes?pagina=1&tamanho=50",
+							"host": [
+								"{{base_url}}permissoes"
+							],
+							"query": [
+								{
+									"key": "pagina",
+									"value": "1"
+								},
+								{
+									"key": "tamanho",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Permissões por Nome",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2Mjk0NjEsImV4cCI6MTcxMjYzMzA2MSwiaWF0IjoxNzEyNjI5NDYxLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.XhA18GMCugV4wgJnn1pdsLDvjatA0WgeIhOKlu1BhC4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}permissoes/nome/Administrador?pagina=1&tamanho=150",
+							"host": [
+								"{{base_url}}permissoes"
+							],
+							"path": [
+								"nome",
+								"Administrador"
+							],
+							"query": [
+								{
+									"key": "pagina",
+									"value": "1"
+								},
+								{
+									"key": "tamanho",
+									"value": "150"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Usuários vinculados a uma Permissão",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2Mjk0NjEsImV4cCI6MTcxMjYzMzA2MSwiaWF0IjoxNzEyNjI5NDYxLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.XhA18GMCugV4wgJnn1pdsLDvjatA0WgeIhOKlu1BhC4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}permissoes/1/usuarios?pagina=1&tamanho=50",
+							"host": [
+								"{{base_url}}permissoes"
+							],
+							"path": [
+								"1",
+								"usuarios"
+							],
+							"query": [
+								{
+									"key": "pagina",
+									"value": "1"
+								},
+								{
+									"key": "tamanho",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Exemplo de requisições para consultar as permissões cadastradas para a Web API",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJuYmYiOjE3MTI1OTk5OTQsImV4cCI6MTcxMjYwMzU5NCwiaWF0IjoxNzEyNTk5OTk0LCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.pMa9KHEgmbglif8eQfW8g6ZH7bLgSVLyMV6IfEqmsNs",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Categorias",
+			"item": [
+				{
+					"name": "Incluir Categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2Mjc5MjYsImV4cCI6MTcxMjYzMTUyNiwiaWF0IjoxNzEyNjI3OTI2LCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.O8wbRaIJMAel1VRDb-O0JbRiX3BcTbGRKBFDqsbauM4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Saúde & Tecnologia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}categorias",
+							"host": [
+								"{{base_url}}categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2Mjc5MjYsImV4cCI6MTcxMjYzMTUyNiwiaWF0IjoxNzEyNjI3OTI2LCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.O8wbRaIJMAel1VRDb-O0JbRiX3BcTbGRKBFDqsbauM4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Eletrônicos\",\r\n  \"id\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}categorias",
+							"host": [
+								"{{base_url}}categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2Mjc5MjYsImV4cCI6MTcxMjYzMTUyNiwiaWF0IjoxNzEyNjI3OTI2LCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.O8wbRaIJMAel1VRDb-O0JbRiX3BcTbGRKBFDqsbauM4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}categorias/11",
+							"host": [
+								"{{base_url}}categorias"
+							],
+							"path": [
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Categoria por Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2Mjc5MjYsImV4cCI6MTcxMjYzMTUyNiwiaWF0IjoxNzEyNjI3OTI2LCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.O8wbRaIJMAel1VRDb-O0JbRiX3BcTbGRKBFDqsbauM4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}categorias/1",
+							"host": [
+								"{{base_url}}categorias"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Categorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2Mjc5MjYsImV4cCI6MTcxMjYzMTUyNiwiaWF0IjoxNzEyNjI3OTI2LCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.O8wbRaIJMAel1VRDb-O0JbRiX3BcTbGRKBFDqsbauM4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}categorias?pagina=1&tamanho=10",
+							"host": [
+								"{{base_url}}categorias"
+							],
+							"query": [
+								{
+									"key": "pagina",
+									"value": "1"
+								},
+								{
+									"key": "tamanho",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Produtos vinculados à categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2Mjc5MjYsImV4cCI6MTcxMjYzMTUyNiwiaWF0IjoxNzEyNjI3OTI2LCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.O8wbRaIJMAel1VRDb-O0JbRiX3BcTbGRKBFDqsbauM4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}categorias/1/produtos?pagina=1&tamanho=10",
+							"host": [
+								"{{base_url}}categorias"
+							],
+							"path": [
+								"1",
+								"produtos"
+							],
+							"query": [
+								{
+									"key": "pagina",
+									"value": "1"
+								},
+								{
+									"key": "tamanho",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Exemplo de requisições para consultar as categorias cadastradas para a Web API",
+			"auth": {
+				"type": "bearer"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "Incluir Produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2MzY0NjIsImV4cCI6MTcxMjY0MDA2MiwiaWF0IjoxNzEyNjM2NDYyLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.SqWlXk4YzZLPG7FfawXFwIQpteYyKnnrQLfC7_9f6m0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"string\",\r\n  \"descricao\": \"string\",\r\n  \"valorVenda\": 1.25,\r\n  \"valorCompra\": 0.99,\r\n  \"idCategoria\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}produtos",
+							"host": [
+								"{{base_url}}produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2MzY0NjIsImV4cCI6MTcxMjY0MDA2MiwiaWF0IjoxNzEyNjM2NDYyLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.SqWlXk4YzZLPG7FfawXFwIQpteYyKnnrQLfC7_9f6m0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"nome\": \"string\",\r\n  \"descricao\": \"string\",\r\n  \"valorVenda\": 0.00,\r\n  \"valorCompra\": 0.00,\r\n  \"idCategoria\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}produtos",
+							"host": [
+								"{{base_url}}produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2MzY0NjIsImV4cCI6MTcxMjY0MDA2MiwiaWF0IjoxNzEyNjM2NDYyLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.SqWlXk4YzZLPG7FfawXFwIQpteYyKnnrQLfC7_9f6m0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}produtos/1",
+							"host": [
+								"{{base_url}}produtos"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Produto por Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2MzY0NjIsImV4cCI6MTcxMjY0MDA2MiwiaWF0IjoxNzEyNjM2NDYyLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.SqWlXk4YzZLPG7FfawXFwIQpteYyKnnrQLfC7_9f6m0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}produtos/1",
+							"host": [
+								"{{base_url}}produtos"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Produtos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2MzY0NjIsImV4cCI6MTcxMjY0MDA2MiwiaWF0IjoxNzEyNjM2NDYyLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.SqWlXk4YzZLPG7FfawXFwIQpteYyKnnrQLfC7_9f6m0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}produtos?pagina=1&tamanho=10",
+							"host": [
+								"{{base_url}}produtos"
+							],
+							"query": [
+								{
+									"key": "pagina",
+									"value": "1"
+								},
+								{
+									"key": "tamanho",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Produto - Filtro Nome ou Descrição",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2MzY0NjIsImV4cCI6MTcxMjY0MDA2MiwiaWF0IjoxNzEyNjM2NDYyLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.SqWlXk4YzZLPG7FfawXFwIQpteYyKnnrQLfC7_9f6m0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}produtos/filtrar?pagina=1&tamanho=10&nome=papeis&descricao=digitos",
+							"host": [
+								"{{base_url}}produtos"
+							],
+							"path": [
+								"filtrar"
+							],
+							"query": [
+								{
+									"key": "pagina",
+									"value": "1"
+								},
+								{
+									"key": "tamanho",
+									"value": "10"
+								},
+								{
+									"key": "nome",
+									"value": "papeis"
+								},
+								{
+									"key": "descricao",
+									"value": "digitos"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Exemplo de requisições para consultar os produtos cadastradas para a Web API"
+		},
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "Incluir Usuário",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2MzY0NjIsImV4cCI6MTcxMjY0MDA2MiwiaWF0IjoxNzEyNjM2NDYyLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.SqWlXk4YzZLPG7FfawXFwIQpteYyKnnrQLfC7_9f6m0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"apelido\": \"string\",\r\n  \"email\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"idPermissao\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}usuarios",
+							"host": [
+								"{{base_url}}usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Usuário",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2MzY0NjIsImV4cCI6MTcxMjY0MDA2MiwiaWF0IjoxNzEyNjM2NDYyLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.SqWlXk4YzZLPG7FfawXFwIQpteYyKnnrQLfC7_9f6m0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,  \r\n  \"apelido\": \"string\",\r\n  \"email\": \"string\",\r\n  \"idPermissao\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}usuarios",
+							"host": [
+								"{{base_url}}usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Senha do Usuário",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2MzY0NjIsImV4cCI6MTcxMjY0MDA2MiwiaWF0IjoxNzEyNjM2NDYyLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.SqWlXk4YzZLPG7FfawXFwIQpteYyKnnrQLfC7_9f6m0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"senha\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}usuarios/3/senha",
+							"host": [
+								"{{base_url}}usuarios"
+							],
+							"path": [
+								"3",
+								"senha"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Usuário",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2MzY0NjIsImV4cCI6MTcxMjY0MDA2MiwiaWF0IjoxNzEyNjM2NDYyLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.SqWlXk4YzZLPG7FfawXFwIQpteYyKnnrQLfC7_9f6m0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}usuarios/9",
+							"host": [
+								"{{base_url}}usuarios"
+							],
+							"path": [
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Usuário por Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2MzY0NjIsImV4cCI6MTcxMjY0MDA2MiwiaWF0IjoxNzEyNjM2NDYyLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.SqWlXk4YzZLPG7FfawXFwIQpteYyKnnrQLfC7_9f6m0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}usuarios/3",
+							"host": [
+								"{{base_url}}usuarios"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Usuários",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlLmx1aXpAdGVzdGUuY29tIiwicm9sZSI6IkFkbWluaXN0cmFkb3IiLCJSZXF1ZXN0ZXIiOiJBbmRyw6kiLCJPd25lciI6IjEiLCJuYmYiOjE3MTI2MzY0NjIsImV4cCI6MTcxMjY0MDA2MiwiaWF0IjoxNzEyNjM2NDYyLCJpc3MiOiJDYXTDoWxvZ28gZGUgUHJvZHV0b3MiLCJhdWQiOiJQcm9kdXRvLUNhdGFsb2dvLUFQSSJ9.SqWlXk4YzZLPG7FfawXFwIQpteYyKnnrQLfC7_9f6m0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-timestamp",
+								"value": "{{isoDate}} {{isoTime}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}usuarios?pagina=1&tamanho=10",
+							"host": [
+								"{{base_url}}usuarios"
+							],
+							"query": [
+								{
+									"key": "pagina",
+									"value": "1"
+								},
+								{
+									"key": "tamanho",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Exemplo de requisições para consultar os usuários cadastrados para a Web API"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const moment = require('moment');\r",
+					"\r",
+					"// Define o formato de data e hora\r",
+					"const dateFormat = 'YYYY-MM-DD';\r",
+					"const timeFormat = 'HH:mm:ss';\r",
+					"\r",
+					"// Obtém a data e hora atual em UTC\r",
+					"const utcDate = moment.utc().format(dateFormat);\r",
+					"const utcTime = moment.utc().format(timeFormat);\r",
+					"\r",
+					"// Define a variável do Postman\r",
+					"pm.variables.set('isoDate', utcDate);\r",
+					"pm.variables.set('isoTime', utcTime);"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://localhost:7058/api/"
+		},
+		{
+			"key": "isoDate",
+			"value": "{{$isoDate}}",
+			"type": "string"
+		},
+		{
+			"key": "isoTime",
+			"value": "{{$isoTime}}",
+			"type": "string"
+		},
+		{
+			"key": "email_usuario",
+			"value": "andre.luiz@teste.com",
+			"type": "string"
+		},
+		{
+			"key": "senha_usuario",
+			"value": "2fdf554dc3ee2485c647b1ef5683dd7a",
+			"type": "string"
+		}
+	]
+}

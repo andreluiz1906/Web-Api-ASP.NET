@@ -12,7 +12,7 @@ public static class ValidationMessages
     public const string GenericReturnBadRequest = "A solicitação não pode ser concluída";
     public const string RegisterNotFound = "Registro não localizado.";
     public const string EmptyReturn = "Sem Registros para a solicitação.";
-
+    public const string EmptyQueryParams = "Deve ser informado um campo para pesquisa.";
     public static class Token
     {
         private const string itemName = "Token de Acesso";
@@ -54,15 +54,35 @@ public static class ValidationMessages
 
     public static class User
     {
+        public static class Id
+        {
+            private const string itemName = "Id";
+            public const string Missing = $"{itemName}{DefaultMissingField}";
+        }
+        public static class Nickname
+        {
+            private const string itemName = "Apelido";
+            public const string Missing = $"{itemName}{DefaultMissingField}";
+            public const string Invalid = $"{itemName}{DefaultInvalidField}";
+            public const string Size = $"{itemName} deve conter no máximo 50 caracteres";
+        }
+
         public static class Email
         {
             private const string itemName = "E-mail";
             public const string Missing = $"{itemName}{DefaultMissingField}";
             public const string Invalid = $"{itemName}{DefaultInvalidField}";
+            public const string Size = $"{itemName} deve conter no máximo 255 caracteres";
         }
         public static class Password
         {
             private const string itemName = "Senha";
+            public const string Missing = $"{itemName}{DefaultMissingField}";
+            public const string Size = $"{itemName} deve conter no máximo 900 caracteres";
+        }
+        public static class Permission
+        {
+            private const string itemName = "IdPermissao";
             public const string Missing = $"{itemName}{DefaultMissingField}";
         }
     }
@@ -73,7 +93,7 @@ public static class ValidationMessages
         {
             private const string itemName = "Nome";
             public const string Missing = $"{itemName}{DefaultMissingField}";
-            public const string Size = $"{itemName} deve conter no máximo 50 caracteres";
+            public const string Size = $"{itemName} deve conter no máximo 80 caracteres";
         }
         public static class Id
         {
@@ -87,13 +107,13 @@ public static class ValidationMessages
         {
             private const string itemName = "Nome";
             public const string Missing = $"{itemName}{DefaultMissingField}";
-            public const string Size = $"{itemName} deve conter no máximo 50 caracteres";
+            public const string Size = $"{itemName} deve conter no máximo 100 caracteres";
         }
         public static class Description
         {
             private const string itemName = "Descricao";
             public const string Missing = $"{itemName}{DefaultMissingField}";
-            public const string Size = $"{itemName} deve conter no máximo 50 caracteres";
+            public const string Size = $"{itemName} deve conter no máximo 250 caracteres";
         }
         public static class PurchasePrice
         {

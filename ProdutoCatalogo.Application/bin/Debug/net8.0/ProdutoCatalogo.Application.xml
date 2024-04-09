@@ -21,10 +21,11 @@
             <pre>
             {
               "usuario": {
-                "permissao": "string",
+                "id": 1,
                 "apelido": "string",
                 "email": "user@example.com",
-                "id": 1,
+                "idPermissao": 1,
+                "permissao": "string",
                 "dataCadastro": "1900-01-01T00:00:00"
               },
               "tokenAcesso": {
@@ -57,43 +58,39 @@
             <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
             <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
         </member>
-        <member name="M:ProdutoCatalogo.Application.Controllers.CategoriasController.BusinessLogin(System.DateTime,ProdutoCatalogo.Domain.DTOs.Requests.CategoryInsert)">
+        <member name="M:ProdutoCatalogo.Application.Controllers.CategoriasController.Add(System.DateTime,ProdutoCatalogo.Domain.DTOs.Requests.CategoryInsert)">
             <summary>
             Este endpoint permite adicionar um novo registro de categoria. Para acessar é necessário que o token esteja atrelado a uma conta com permissão de Administrador
             </summary>
-            <response code="200">OK: A consulta retorna a lista com os dados obtidos.
+            <response code="200">OK: O registro foi salvo com sucesso.
             <pre>
             {
-              "totalizador": {
-                "existeMaisPaginas": true,
-                "paginaAtual": 1,
-                "totalDePaginas": 1,
-                "totalDeItens": 1,
-                "itensDaLista": 1,
-                "limiteDeItens": 50
-              },
-              "permissoes": [
-                {
-                  "id": 1,
-                  "nome": "string"
-                },
-                {
-                  "id": 1,
-                  "nome": "string"
-                }
-              ]
+              "idUsuario": 1,
+              "id": 1,
+              "nome": "string"
             }
             </pre>
             </response>
             <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
             <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
-            <response code="401">Forbidden: Código de Usuário ou permissão de acesso vinculado ao token está inválido.</response>
+            <response code="403">Forbidden: Código de Usuário ou permissão de acesso vinculado ao token está inválido.</response>
             <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
             <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
         </member>
-        <member name="M:ProdutoCatalogo.Application.Controllers.CategoriasController.BusinessLogin(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination)">
+        <member name="M:ProdutoCatalogo.Application.Controllers.CategoriasController.Update(System.DateTime,ProdutoCatalogo.Domain.DTOs.Requests.CategoryUpdate)">
             <summary>
-            Este endpoint permite realizar a consulta de todas permissões cadastradas. Esta é uma consulta paginada
+            Este endpoint permite alterar um registro de categoria. Para acessar é necessário que o token esteja atrelado a uma conta com permissão de Administrador
+            </summary>
+            <response code="200">OK: O registro foi atualizado com sucesso.</response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+            <response code="403">Forbidden: Código de Usuário ou permissão de acesso vinculado ao token está inválido.</response>
+            <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.CategoriasController.GetAll(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination)">
+            <summary>
+            Este endpoint permite realizar a consulta de todas as categorias cadastradas. Esta é uma consulta paginada
             </summary>
             <response code="200">OK: A consulta retorna a lista com os dados obtidos.
             <pre>
@@ -106,14 +103,16 @@
                 "itensDaLista": 1,
                 "limiteDeItens": 50
               },
-              "permissoes": [
+              "categorias": [
                 {
                   "id": 1,
-                  "nome": "string"
+                  "nome": "string",
+                  "idUsuario": 1
                 },
                 {
                   "id": 1,
-                  "nome": "string"
+                  "nome": "string",
+                  "idUsuario": 1
                 }
               ]
             }
@@ -124,7 +123,80 @@
             <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
             <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
         </member>
-        <member name="M:ProdutoCatalogo.Application.Controllers.PermissoesController.BusinessLogin(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination)">
+        <member name="M:ProdutoCatalogo.Application.Controllers.CategoriasController.GetProductsByCategory(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination,System.Int32)">
+            <summary>
+            Este endpoint permite realizar a consulta dos produtos que estão vinculados à categoria pesquisada. Esta é uma consulta paginada
+            </summary>
+            <response code="200">OK: A consulta retorna a lista com os dados obtidos.
+            <pre>
+            {
+              "totalizador": {
+                "existeMaisPaginas": true,
+                "paginaAtual": 1,
+                "totalDePaginas": 1,
+                "totalDeItens": 1,
+                "itensDaLista": 1,
+                "limiteDeItens": 50
+              },
+              "produtos": [
+                {
+                  "id": 1,
+                  "idCategoria": 1,
+                  "idUsuarioCadastrou": 1,
+                  "nome": "Aparelho Medidor de Pressão",
+                  "descricao": "Aparelho para medir pressão arterial. Digital de pulso",
+                  "valorVenda": 80.00,
+                  "valorCompra": 60.00,
+                  "dataCadastro": "2024-04-05T23:31:28"
+                },
+                {
+                  "id": 1,
+                  "idCategoria": 1,
+                  "idUsuarioCadastrou": 1,
+                  "nome": "Aparelho Medidor de Pressão",
+                  "descricao": "Aparelho para medir pressão arterial. Digital de pulso",
+                  "valorVenda": 80.00,
+                  "valorCompra": 60.00,
+                  "dataCadastro": "2024-04-05T23:31:28"
+                }
+              ]
+            }
+            </pre>
+            </response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+            <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.CategoriasController.GetById(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination,System.Int32)">
+            <summary>
+            Este endpoint permite realizar a consulta de uma categoria específica realizando a busca pelo Id.
+            </summary>
+            <response code="200">OK: A consulta retorna com os detalhes do item.
+            <pre>
+            {
+              "id": 1,
+              "nome": "string",
+              "idUsuario": 1
+            }
+            </pre>
+            </response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+            <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.CategoriasController.Delete(System.DateTime,System.Int32)">
+            <summary>
+            Este endpoint permite realizar a exclusão de uma categoria específica.
+            </summary>
+            <response code="204">No Content: O cadastro foi com sucesso.</response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+            <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.PermissoesController.GetAll(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination)">
             <summary>
             Este endpoint permite realizar a consulta de todas permissões cadastradas. Esta é uma consulta paginada
             </summary>
@@ -161,7 +233,7 @@
             <summary>
             Este endpoint permite realizar a consulta de uma permissão específica realizando a busca pelo Id.
             </summary>
-            <response code="200">OK: A consulta retorna a lista com os dados obtidos.
+            <response code="200">OK: A consulta retorna com os detalhes do item.
             <pre>
               {
                 "id": 1,
@@ -174,7 +246,7 @@
             <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
             <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
         </member>
-        <member name="M:ProdutoCatalogo.Application.Controllers.PermissoesController.BusinessLogin(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination,System.String)">
+        <member name="M:ProdutoCatalogo.Application.Controllers.PermissoesController.GetByName(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination,System.String)">
             <summary>
             Este endpoint permite realizar a consulta das permissões cadastradas filtrando a busca pelo nome da permissão. Esta é uma consulta paginada
             </summary>
@@ -208,7 +280,7 @@
             <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
         </member>
         <member name="M:ProdutoCatalogo.Application.Controllers.PermissoesController.GetUsers(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination,System.Int32)">
-            <summary>
+            <summary>        
             Este endpoint permite realizar a consulta dos usuários que estão vinculados à permissão pesquisada. Esta é uma consulta paginada
             </summary>
             <response code="200">OK: A consulta retorna a lista com os dados obtidos.
@@ -225,16 +297,292 @@
               "usuarios": [
                 {
                   "id": 1,
-                  "permissao": "string",
                   "apelido": "string",
                   "email": "user@example.com",
+                  "idPermissao": 1,
+                  "permissao": "string",
                   "dataCadastro": "1900-01-01T00:00:00"
                 },
                 {
                   "id": 1,
-                  "permissao": "LeitorLeitor",
                   "apelido": "string",
                   "email": "user@example.com",
+                  "idPermissao": 1,
+                  "permissao": "string",
+                  "dataCadastro": "1900-01-01T00:00:00"
+                }
+              ]
+            }
+            </pre>
+            </response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+            <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.ProdutosController.Add(System.DateTime,ProdutoCatalogo.Domain.DTOs.Requests.ProductInsert)">
+            <summary>
+            Este endpoint permite adicionar um novo registro de produto. Para acessar é necessário que o token esteja atrelado a uma conta com permissão de Administrador
+            </summary>
+            <response code="200">OK: O registro foi salvo com sucesso.
+            <pre>
+            {
+               "nome": "string",
+               "descricao": "string",
+               "valorVenda": 0.00,
+               "valorCompra": 0.00,
+               "idCategoria": 1,
+               "id": 1,
+               "dataCadastro": "1900-01-01T00:00:00",
+               "idUsuarioCadastrou": 1
+            }
+            </pre>
+            </response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+            <response code="403">Forbidden: Código de Usuário ou permissão de acesso vinculado ao token está inválido.</response>
+            <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.ProdutosController.Update(System.DateTime,ProdutoCatalogo.Domain.DTOs.Requests.ProductUpdate)">
+            <summary>
+            Este endpoint permite alterar um registro de produto. Para acessar é necessário que o token esteja atrelado a uma conta com permissão de Administrador
+            </summary>
+            <response code="200">OK: O registro foi atualizado com sucesso.</response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+            <response code="403">Forbidden: Código de Usuário ou permissão de acesso vinculado ao token está inválido.</response>
+            <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.ProdutosController.Delete(System.DateTime,System.Int32)">
+            <summary>
+            Este endpoint permite realizar a exclusão de um produto específico.
+            </summary>
+            <response code="204">No Content: O cadastro foi com sucesso.</response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+            <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.ProdutosController.GetById(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination,System.Int32)">
+            <summary>
+            Este endpoint permite realizar a consulta de um produto específico realizando a busca pelo Id.
+            </summary>
+            <response code="200">OK: A consulta retorna com os detalhes do item.
+            <pre>
+            {
+               "nome": "string",
+               "descricao": "string",
+               "valorVenda": 0.00,
+               "valorCompra": 0.00,
+               "idCategoria": 1,
+               "id": 1,
+               "dataCadastro": "1900-01-01T00:00:00",
+               "idUsuarioCadastrou": 1
+            }
+            </pre>
+            </response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+            <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.ProdutosController.GetAll(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination)">
+            <summary>
+            Este endpoint permite realizar a consulta de todos os produtos cadastrados. Esta é uma consulta paginada
+            </summary>
+            <response code="200">OK: A consulta retorna a lista com os dados obtidos.
+            <pre>
+            {
+              "totalizador": {
+                "existeMaisPaginas": true,
+                "paginaAtual": 1,
+                "totalDePaginas": 1,
+                "totalDeItens": 1,
+                "itensDaLista": 1,
+                "limiteDeItens": 50
+              },
+              "produtos": [
+              {
+                 "nome": "string",
+                 "descricao": "string",
+                 "valorVenda": 0.00,
+                 "valorCompra": 0.00,
+                 "idCategoria": 1,
+                 "id": 1,
+                 "dataCadastro": "1900-01-01T00:00:00",
+                 "idUsuarioCadastrou": 1
+              },
+              {
+                 "nome": "string",
+                 "descricao": "string",
+                 "valorVenda": 0.00,
+                 "valorCompra": 0.00,
+                 "idCategoria": 1,
+                 "id": 1,
+                 "dataCadastro": "1900-01-01T00:00:00",
+                 "idUsuarioCadastrou": 1
+              }
+              ]
+            }
+            </pre>
+            </response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+            <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.ProdutosController.GetProductsByCategory(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination,ProdutoCatalogo.Domain.DTOs.Requests.ProductQueryParam)">
+            <summary>
+            Este endpoint permite realizar a consulta dos produtos filtrando a busca pelo nome ou descrição. Esta é uma consulta paginada
+            </summary>
+            <response code="200">OK: A consulta retorna a lista com os dados obtidos.
+            <pre>
+            {
+              "totalizador": {
+                "existeMaisPaginas": true,
+                "paginaAtual": 1,
+                "totalDePaginas": 1,
+                "totalDeItens": 1,
+                "itensDaLista": 1,
+                "limiteDeItens": 50
+              },
+              "produtos": [
+                {
+                  "id": 1,
+                  "idCategoria": 1,
+                  "idUsuarioCadastrou": 1,
+                  "nome": "Aparelho Medidor de Pressão",
+                  "descricao": "Aparelho para medir pressão arterial. Digital de pulso",
+                  "valorVenda": 80.00,
+                  "valorCompra": 60.00,
+                  "dataCadastro": "2024-04-05T23:31:28"
+                },
+                {
+                  "id": 1,
+                  "idCategoria": 1,
+                  "idUsuarioCadastrou": 1,
+                  "nome": "Aparelho Medidor de Pressão",
+                  "descricao": "Aparelho para medir pressão arterial. Digital de pulso",
+                  "valorVenda": 80.00,
+                  "valorCompra": 60.00,
+                  "dataCadastro": "2024-04-05T23:31:28"
+                }
+              ]
+            }
+            </pre>
+            </response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+            <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.UsuariosController.Add(System.DateTime,ProdutoCatalogo.Domain.DTOs.Requests.UserInsert)">
+            <summary>
+            Este endpoint permite adicionar um novo registro de usuário. Para acessar é necessário que o token esteja atrelado a uma conta com permissão de Administrador
+            </summary>
+            <response code="200">OK: O registro foi salvo com sucesso.
+            <pre>
+            {
+              "id": 1,
+              "apelido": "string",
+              "email": "user@example.com",
+              "idPermissao": 1,
+              "permissao": "string",
+              "dataCadastro": "1900-01-01T00:00:00"
+            }
+            </pre>
+            </response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+            <response code="403">Forbidden: Código de Usuário ou permissão de acesso vinculado ao token está inválido.</response>
+            <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.UsuariosController.Update(System.DateTime,ProdutoCatalogo.Domain.DTOs.Requests.UserUpdate)">
+            <summary>
+            Este endpoint permite alterar um registro de usuário. Para acessar é necessário que o token esteja atrelado a uma conta com permissão de Administrador
+            </summary>
+            <response code="200">OK: O registro foi atualizado com sucesso.</response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+            <response code="403">Forbidden: Código de Usuário ou permissão de acesso vinculado ao token está inválido.</response>
+            <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.UsuariosController.Update(System.DateTime,ProdutoCatalogo.Domain.DTOs.Requests.ChangePassword,System.Int32)">
+            <summary>
+            Este endpoint permite alterar a senha do cadastro do usuário. Para acessar é necessário que o token esteja atrelado a uma conta com permissão de Administrador
+            </summary>
+            <response code="200">OK: O registro foi atualizado com sucesso.</response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+            <response code="403">Forbidden: Código de Usuário ou permissão de acesso vinculado ao token está inválido.</response>
+            <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.UsuariosController.Delete(System.DateTime,System.Int32)">
+            <summary>
+            Este endpoint permite realizar a exclusão de um usuário específico.
+            </summary>
+            <response code="204">No Content: O cadastro foi com sucesso.</response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+            <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.UsuariosController.GetById(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination,System.Int32)">
+            <summary>
+            Este endpoint permite realizar a consulta de um usuário específico realizando a busca pelo Id.
+            </summary>
+            <response code="200">OK: A consulta retorna com os detalhes do item.
+            <pre>
+            {
+              "id": 1,
+              "apelido": "string",
+              "email": "user@example.com",
+              "idPermissao": 1,
+              "permissao": "string",
+              "dataCadastro": "1900-01-01T00:00:00"
+            }
+            </pre>
+            </response>
+            <response code="400">Bad Request: Os dados fornecidos são inválidos ou incompletos.</response>
+            <response code="401">Unauthorized: Não foi informado o token de acesso ou o token está expirado.</response>
+            <response code="404">Not Found: Não foi possível encontrar nenhum registro.</response>
+            <response code="500">Internal Server Error: Não foi possível concluir a solicitação por alguma falha interna.</response>
+        </member>
+        <member name="M:ProdutoCatalogo.Application.Controllers.UsuariosController.GetAll(System.DateTime,ProdutoCatalogo.Application.DTOs.Pagination)">
+            <summary>
+            Este endpoint permite realizar a consulta de todos os usuários cadastrados. Esta é uma consulta paginada
+            </summary>
+            <response code="200">OK: A consulta retorna a lista com os dados obtidos.
+            <pre>
+            {
+              "totalizador": {
+                "existeMaisPaginas": true,
+                "paginaAtual": 1,
+                "totalDePaginas": 1,
+                "totalDeItens": 1,
+                "itensDaLista": 1,
+                "limiteDeItens": 50
+              },
+              "usuarios": [
+                {
+                  "id": 1,
+                  "apelido": "string",
+                  "email": "user@example.com",
+                  "idPermissao": 1,
+                  "permissao": "string",
+                  "dataCadastro": "1900-01-01T00:00:00"
+                },
+                {
+                  "id": 1,
+                  "apelido": "string",
+                  "email": "user@example.com",
+                  "idPermissao": 1,
+                  "permissao": "string",
                   "dataCadastro": "1900-01-01T00:00:00"
                 }
               ]
